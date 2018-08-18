@@ -78,15 +78,4 @@ class Stack
     }
 
 }
-$linklist = new LinkList\LinkList();
-
-$linklist->AddLinkListInTail(1);
-$linklist->AddLinkListInTail(9);
-$linklist->AddLinkListInTail(9);
-$linklist->AddLinkListInTail(7);
-$linklist->AddLinkListInTail(0);
-$linklist->AddLinkListInTail(2);
-$linklist->AddLinkListInTail(2);
-$linklist->AddLinkListInTail(6);
-$linklist->ScanLinkListInvertedByStack();
 
