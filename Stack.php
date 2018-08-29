@@ -8,14 +8,6 @@
 
 namespace  algorithm\Stack;
 
-spl_autoload_register(function ($class_name)
-{
-    $array = explode('\\', $class_name);
-    require_once $array[1] . '.php';
-
-});
-
-use algorithm\LinkList ;
 
 class Stack
 {
@@ -35,7 +27,7 @@ class Stack
             $this->errormessage = '栈满!';
             return $this->errormessage;
         }
-        $node = new LinkList\Node($data);
+        $node = new \algorithm\LinkListNode\LinkListNode($data);
         $node->next =  $this -> toppoint;
         $this->toppoint = $node;
         $this->top++;
@@ -56,7 +48,7 @@ class Stack
     public function ReadTop()
     {
         if (!$this->IsEmpty()) {
-            echo $this->toppoint->data."<br>";
+           return $this->toppoint->data;
         }
     }
 

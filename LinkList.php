@@ -2,23 +2,13 @@
 
 namespace  algorithm\LinkList;
 
-class Node
-{
-	public $data;
-	public $next;
-	public function __construct($data)
-	{
-		$this -> data = $data;
-	}
-}
-
 class LinkList
 {
 	public $head;
 	public static $tail;
 	public function __construct()
 	{
-		$this -> head = new Node(null);
+		$this -> head = new LinkListNode(null);
 		$this -> head -> next = null;
 		self :: $tail = $this -> head;
 	}
@@ -29,7 +19,7 @@ class LinkList
 		if ($this -> head -> next == null) {
 			$isfirst = true;
 		}
-		$node = new Node($data);
+		$node = new LinkListNode($data);
 		$node -> next = $this -> head -> next;
 		$this -> head -> next = $node;
 		if ($isfirst == true) {
@@ -42,7 +32,7 @@ class LinkList
 	final public function AddLinkListInTail($data)
 	{
 
-		$node = new Node($data);
+		$node = new LinkListNode($data);
 		$node -> next = self :: $tail -> next;
 		self :: $tail -> next = $node;
 		self :: $tail = $node;
@@ -162,7 +152,7 @@ class LinkList
 			echo "failed to delete !";
 			return false;
 		} else {
-			$newnode = new Node($data);
+			$newnode = new LinkListNode($data);
 			$pre = $array['pre'];
 			$curr = $array['curr'];
 			$pre -> next = $newnode;
