@@ -1,5 +1,6 @@
 <?php
 
+namespace  algorithm\LinkList;
 
 class Node
 {
@@ -68,13 +69,16 @@ class LinkList
 		return;
 	}
 
-	final public function ScanLinkListInverted($node) 
+	final public function ScanLinkListInvertedByStack()
 	{
-		//by stack
-		if ($node -> next !== null) {
-			
-		}
-	} 
+        $stack = new \algorithm\Stack\Stack();
+        $p = $this->head->next;
+        while ($p !== null) {
+            $stack->Push($p->data);
+            $p = $p->next;
+        }
+        $stack->Scanstack();
+	}
 
 	final public function GetLinkListLength()
 	{
@@ -201,9 +205,5 @@ class LinkList
  	
 }
 
-$linklist = new LinkList();
-$linklist -> AddLinkListInHead('扬');
-$linklist -> AddLinkListInHead('翰');
-$linklist -> AddLinkListInHead('李');
-$linklist -> ScanLinkListInverted($linklist -> head);
+
 
